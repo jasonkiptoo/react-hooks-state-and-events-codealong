@@ -3,6 +3,7 @@ import { useState } from "react";
 
 function Toggle() {
   const [isOn, setIsOn] = useState(false);
+
   const color = isOn ? "red" : "blue";
   const btnClick = () => {
     setIsOn((isOn) => !isOn);
