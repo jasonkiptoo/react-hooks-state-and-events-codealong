@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Login from "./Login";
@@ -11,16 +11,22 @@ function App() {
   return (
     <div>
       <NavBar />
-      {/* <About />
-      <Home /> */}
-      <Routes>
-        <Route exact path="/about" element={<About />} />
+      <Switch>
+        <Route exact path="/about">
+          {<About />}
+        </Route>
 
-        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/login">
+          {<Login />}{" "}
+        </Route>
 
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/toggle" element={<Toggle />} />
-      </Routes>
+        <Route exact path="/">
+          {<Home />}{" "}
+        </Route>
+        <Route exact path="/toggle">
+          {<Toggle />}
+        </Route>
+      </Switch>
     </div>
   );
 }
